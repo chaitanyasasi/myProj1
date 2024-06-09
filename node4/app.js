@@ -22,7 +22,7 @@ app.use(CookieSession({ name: "session", keys: ["edureka"], maxAge: 24 * 60 * 60
 
 dotenv.config();
 
-app.use(exp.json());
+app.use(express.json());
 app.use(PassPort.initialize());
 app.use(PassPort.session());
 app.use(Cors(corsOptions));
