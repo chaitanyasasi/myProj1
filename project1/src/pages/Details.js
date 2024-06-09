@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import '../Style/Details.css'
+const BASE_URL = window.env.REACT_APP_BASE_URL;
 
 
 const customStyles = {
@@ -42,7 +43,7 @@ class DetailsPage extends React.Component {
 
 
         Axios({
-            url: `http://localhost:3103/restaurant/${restaurant}`,
+            url: `${BASE_URL}/restaurant/${restaurant}`,
             method: 'get',
             headers: { 'Content-Type': 'application/JSON' }
         }).then(res => {
@@ -62,7 +63,7 @@ class DetailsPage extends React.Component {
         if (state === "menuModal" && value === true) {
 
             Axios({
-                url: `http://localhost:3103/menu/${restId}`,
+                url: `${BASE_URL}/menu/${restId}`,
                 method: 'get',
                 headers: { 'Content-Type': 'application/JSON' }
             }).then(res => {
@@ -111,7 +112,7 @@ class DetailsPage extends React.Component {
             handler: async (response) => {
                 try {
 
-                    const verifyLink = "http://localhost:3103/api/payment/verify";
+                    const verifyLink = `${BASE_URL}/api/payment/verify`;
                     const { data } = await Axios.post(verifyLink, response);
 
                 } catch (error) {
@@ -128,7 +129,7 @@ class DetailsPage extends React.Component {
         console.log(subtotal)
 
         try {
-            const orderLink = "http://localhost:3103/api/payment/orders";
+            const orderLink = `${BASE_URL}/api/payment/orders`;
             const { data } = await Axios.post(orderLink, { amount: subtotal });
             console.log(data)
 
