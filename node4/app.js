@@ -1,18 +1,16 @@
-const exp = require('express');
+const express = require('express');
 const mong = require('mongoose');
 const RouteOne = require('./Route');
 const Cors = require('cors');
-const Dotenv = require("dotenv");
+const dotenv = require("dotenv");
 const PassPort = require('passport');
 const CookieSession = require('cookie-session');
 
-const app = exp();
+const app = express();
 
 const paymentRoute = require('./controller/payment');
 const passportSetup = require("./controller/passport");
 const authRoute = require("./controller/auth");
-
-
 
 const corsOptions = {
     origin: 'http://localhost:3000',
@@ -20,8 +18,9 @@ const corsOptions = {
     optionSuccessStatus: 200
 }
 
-Dotenv.config();
 app.use(CookieSession({ name: "session", keys: ["edureka"], maxAge: 24 * 60 * 60 * 1000 }))
+
+dotenv.config();
 
 app.use(exp.json());
 app.use(PassPort.initialize());
