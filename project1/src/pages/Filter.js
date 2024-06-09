@@ -5,6 +5,8 @@ import navHook from './nav';
 import "../Style/Filter.css";
 import Axios from "axios";
 
+const BASE_URL = window.env.REACT_APP_BASE_URL;
+
 class FilterPage extends React.Component {
     constructor() {
         super();
@@ -29,7 +31,7 @@ class FilterPage extends React.Component {
         }
 
         Axios({
-            url: 'http://localhost:3103/restaurantByCity',
+            url:`${BASE_URL}/restaurantByCity`,
             method: 'post',
             headers: { 'Content-Type': 'application/JSON' },
             data: filterObj
@@ -41,7 +43,7 @@ class FilterPage extends React.Component {
             
               // Mealtype
         Axios({
-            url: `http://localhost:3103/meal/${int}`,
+            url: `${BASE_URL}/meal/${int}`,
             method: 'GET',
             headers: { 'Content-Type': 'application/JSON'}
         })
@@ -52,7 +54,7 @@ class FilterPage extends React.Component {
 
 
         Axios({
-            url: 'http://localhost:3103/placesDb',
+            url: `${BASE_URL}/placesDb`,
             method: 'get',
             headers: { 'Content-Type': 'application/json' }
         }).then(res => {
@@ -78,7 +80,7 @@ class FilterPage extends React.Component {
         }
 
         Axios({
-            url: 'http://localhost:3103/restaurantByCity',
+            url: `${BASE_URL}/restaurantByCity`,
             method: 'post',
             headers: { 'Content-Type': 'application/JSON' },
             data: filterObj
@@ -111,7 +113,7 @@ class FilterPage extends React.Component {
             mealType
         }
         Axios({
-            url: 'http://localhost:3103/restaurantByCity',
+            url: `${BASE_URL}/restaurantByCity`,
             method: 'post',
             headers: { 'Content-Type': 'application/JSON' },
             data: filterObj
@@ -138,7 +140,7 @@ class FilterPage extends React.Component {
         }
 
         Axios({
-            url: 'http://localhost:3103/restaurantByCity',
+            url: `${BASE_URL}/restaurantByCity`,
             method: 'post',
             headers: { 'Content-Type': 'application/JSON' },
             data: filterObj
@@ -163,7 +165,7 @@ class FilterPage extends React.Component {
         }
 
         Axios({
-            url: 'http://localhost:3103/restaurantByCity',
+            url: `${BASE_URL}/restaurantByCity`,
             method: 'post',
             headers: { 'Content-Type': 'application/JSON' },
             data: filterObj
@@ -190,7 +192,7 @@ class FilterPage extends React.Component {
         }
 
         Axios({
-            url: 'http://localhost:3103/restaurantByCity',
+            url: `${BASE_URL}/restaurantByCity`,
             method: 'post',
             headers: { 'Content-Type': 'application/JSON' },
             data: filterObj
