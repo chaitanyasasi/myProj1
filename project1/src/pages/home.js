@@ -4,6 +4,7 @@ import Banner from './Banner';
 import QuickSearch from './QuickSearch';
 import Axios from 'axios';
 import Modal from 'react-modal';
+const BASE_URL = window.env.REACT_APP_BASE_URL;
 
 
 const customStyles = {
@@ -31,7 +32,7 @@ class HomePage extends React.Component {
     }
     componentDidMount() {
         Axios({
-            url: 'http://localhost:3103/placesDb',
+            url: '${BASE_URL}/placesDb`,
             method: 'get',
             headers: { 'Content-Type': 'application/json' }
         }).then(res => {
@@ -41,7 +42,7 @@ class HomePage extends React.Component {
         })
 
         Axios({
-            url: 'http://localhost:3103/mealType',
+            url: `${BASE_URL}/mealType`,
             method: 'get',
             headers: { 'Content-Type': 'application/json' }
         }).then(res => {
