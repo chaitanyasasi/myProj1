@@ -32,7 +32,7 @@ class HomePage extends React.Component {
     }
     componentDidMount() {
         Axios({
-            url: '${BASE_URL}/placesDb`,
+            url: `${BASE_URL}/placesDb`,
             method: 'get',
             headers: { 'Content-Type': 'application/json' }
         }).then(res => {
