@@ -1,5 +1,7 @@
 import React from "react";
 import Modal from 'react-modal';
+const BASE_URL = window.env.REACT_APP_BASE_URL;
+
 
 
 const customStyles = {
@@ -30,11 +32,11 @@ class Header extends React.Component {
     }
 
     google = () => {
-        window.open("http://localhost:3103/auth/google", "_self");
+        window.open(`${BASE_URL}/auth/google`, "_self");
     }
 
     logout = () => {
-        window.open("http://localhost:3103/auth/logout", "_self");
+        window.open(`${BASE_URL}/auth/logout`, "_self");
     }
 
     render() {
