@@ -5,7 +5,7 @@ import FilterPage from "./Filter";
 import DetailsPage from './Details'
 import Header from './Headers';
 import { useEffect, useState } from 'react';
-const BASE_URL = window.env.REACT_APP_BASE_URL;
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 
 const RouterPage = () => {
