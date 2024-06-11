@@ -5,7 +5,7 @@ import navHook from './nav';
 import "../Style/Filter.css";
 import Axios from "axios";
 
-const BASE_URL = window.env.REACT_APP_BASE_URL;
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 class FilterPage extends React.Component {
     constructor() {
