@@ -13,9 +13,11 @@ const passportSetup = require("./controller/passport");
 const authRoute = require("./controller/auth");
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: process.env.REACT_URL,
+    methods: "GET,POST,PUT,DELETE, PATCH",
     credentials: true,
-    optionSuccessStatus: 200
+    optionSuccessStatus: 200,
+    allowedHeaders: "X-Requested-With,content-type, x-token, Access-Control-Allow-Credentials"
 }
 
 app.use(CookieSession({ name: "session", keys: ["edureka"], maxAge: 24 * 60 * 60 * 1000 }))
